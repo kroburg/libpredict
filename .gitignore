@@ -3,3 +3,6 @@ CMakeFiles/
 /Makefile
 /cmake_install.cmake
 /install_manifest.txt
+/vs_build/Debug
+/vs_build/Release
+/vs_build/x64
