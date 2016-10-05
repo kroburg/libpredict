@@ -2,13 +2,13 @@
 #define UNSORTED_H_
 
 #include <predict/predict.h>
-#include <math.h>
+#include "config.h"
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <sys/time.h>
+//#include <sys/time.h>
 #include <time.h>
-#include <unistd.h>
+//#include <unistd.h>
 
 /**
  * Set three-element vector to specified components.

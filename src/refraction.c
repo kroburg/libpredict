@@ -1,5 +1,5 @@
 #include <predict/predict.h>
-#include <math.h>
+#include "config.h"
 
 /* Corrections for atmospheric refraction */
 /* Reference:  Astronomical Algorithms by Jean Meeus, pp. 101-104    */
