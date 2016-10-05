@@ -304,6 +304,15 @@ void predict_observe_orbit(const predict_observer_t *observer, const struct pred
  **/
 void predict_observe_moon(const predict_observer_t *observer, predict_julian_date_t time, struct predict_observation *obs);
 
+/**
+* Estimate ECI sun coordinates.
+*
+* \param time
+* \param position result
+* \copyright GPLv2+
+**/
+void sun_predict(double time, double position[3]);
+
 /** 
  * Estimate relative position of the sun.
  *

@@ -33,6 +33,9 @@
     <ClInclude Include="..\src\unsorted.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\include\predict\predict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\julian_date.c">

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\include\predict\predict.h" />
     <ClInclude Include="..\src\config.h" />
     <ClInclude Include="..\src\defs.h" />
     <ClInclude Include="..\src\sdp4.h" />
