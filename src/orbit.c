@@ -32,7 +32,7 @@ predict_orbital_elements_t* predict_parse_tle(char *tle[2])
 	m->second_derivative_mean_motion = tempnum/pow(10.0,(tle[0][51]-'0'));
 	tempnum=1.0e-5*atof(SubString(tle[0],53,58));
 	m->bstar_drag_term = tempnum/pow(10.0,(tle[0][60]-'0'));
-	m->revolutions_at_epoch = atof(SubString(tle[1],63,67));
+	m->revolutions_at_epoch = (int)atof(SubString(tle[1],63,67));
 
 	/* Period > 225 minutes is deep space */
 	double ao, xnodp, dd1, dd2, delo, a1, del1, r1;
