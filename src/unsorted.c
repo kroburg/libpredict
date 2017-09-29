@@ -213,7 +213,7 @@ double FMod2p(double x)
 	double ret_val;
 
 	ret_val = x;
-	i = ret_val / (2*M_PI);
+	i = (int)(ret_val / (2*M_PI));
 	ret_val -= i*(2*M_PI);
 
 	if (ret_val < 0.0)
@@ -230,7 +230,7 @@ double Modulus(double arg1, double arg2)
 	double ret_val;
 
 	ret_val=arg1;
-	i=ret_val/arg2;
+	i=(int)(ret_val/arg2);
 	ret_val-=i*arg2;
 
 	if (ret_val<0.0)
@@ -282,12 +282,12 @@ double Julian_Date_of_Year(double year)
 	double jdoy;
 
 	year=year-1;
-	i=year/100;
+	i=(long)(year/100);
 	A=i;
 	i=A/4;
 	B=2-A+i;
-	i=365.25*year;
-	i+=30.6001*14;
+	i=(long)(365.25*year);
+	i+=(long)(30.6001*14);
 	jdoy=i+1720994.5+B;
 
 	return jdoy;
@@ -375,7 +375,7 @@ void Date_Time(double julian_date, struct tm *cdate)
 
 	time_t jtime;
 
-	jtime=(julian_date-2440587.5)*86400.0;
+	jtime=(time_t)((julian_date-2440587.5)*86400.0);
 	*cdate=*gmtime(&jtime);
 }
 
@@ -606,7 +606,7 @@ char temp[512];
 char *SubString(const char *string, int start, int end)
 {
 
-	unsigned x, y;
+	int x, y;
 
 	if (end>=start)
 	{
