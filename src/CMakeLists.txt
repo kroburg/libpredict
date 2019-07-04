@@ -1,6 +1,6 @@
-add_library(predict SHARED orbit.c sun.c observer.c sdp4.c sgp4.c refraction.c unsorted.c julian_date.c version.c)
+add_library(predict SHARED config.c orbit.c sun.c observer.c sdp4.c sgp4.c refraction.c unsorted.c julian_date.c version.c)
 
-add_library(predict_static STATIC orbit.c sun.c observer.c sdp4.c sgp4.c refraction.c unsorted.c julian_date.c)
+add_library(predict_static STATIC config.c orbit.c sun.c observer.c sdp4.c sgp4.c refraction.c unsorted.c julian_date.c)
 
 set_target_properties(predict_static PROPERTIES OUTPUT_NAME predict)
 
@@ -26,8 +26,10 @@ set_target_properties(predict PROPERTIES PUBLIC_HEADER "${predict_public_header}
 # Maybe needed on Mac OS?
 #set_target_properties(predict PROPERTIES FRAMEWORK TRUE)
 
-target_link_libraries(predict m)
-target_link_libraries(predict_static m)
+if(NOT MSVC)
+  target_link_libraries(predict m)
+  target_link_libraries(predict_static m)
+endif()
 
 # Tell the linker to use the symbol version script
 get_property(predict_link_flags TARGET predict PROPERTY LINK_FLAGS)
